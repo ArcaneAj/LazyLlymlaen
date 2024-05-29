@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Numerics;
 using Dalamud.Interface.Internal;
 using Dalamud.Interface.Utility;
@@ -9,13 +9,12 @@ namespace LazyLlymlaen.Windows;
 
 public class MainWindow : Window, IDisposable
 {
-    private IDalamudTextureWrap? GoatImage;
     private Plugin Plugin;
 
     // We give this window a hidden ID using ##
     // So that the user will see "My Amazing Window" as window title,
     // but for ImGui the ID is "My Amazing Window##With a hidden ID"
-    public MainWindow(Plugin plugin, IDalamudTextureWrap? goatImage)
+    public MainWindow(Plugin plugin)
         : base("My Amazing Window##With a hidden ID", ImGuiWindowFlags.NoScrollbar | ImGuiWindowFlags.NoScrollWithMouse)
     {
         SizeConstraints = new WindowSizeConstraints
@@ -24,7 +23,6 @@ public class MainWindow : Window, IDisposable
             MaximumSize = new Vector2(float.MaxValue, float.MaxValue)
         };
 
-        GoatImage = goatImage;
         Plugin = plugin;
     }
 
@@ -40,17 +38,5 @@ public class MainWindow : Window, IDisposable
         }
 
         ImGui.Spacing();
-
-        ImGui.Text("Have a goat:");
-        if (GoatImage != null)
-        {
-            ImGuiHelpers.ScaledIndent(55f);
-            ImGui.Image(GoatImage.ImGuiHandle, new Vector2(GoatImage.Width, GoatImage.Height));
-            ImGuiHelpers.ScaledIndent(-55f);
-        }
-        else
-        {
-            ImGui.Text("Image not found.");
-        }
     }
 }
