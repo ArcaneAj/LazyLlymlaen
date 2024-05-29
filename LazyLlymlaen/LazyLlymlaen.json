@@ -1,0 +1,10 @@
+{
+  "Author": "AecaneAj",
+  "Name": "Lazy Llymlaen",
+  "Punchline": "A crowd sourced tool for tracking fish requirements and cast times.",
+  "Description": "A crowd sourced tool for tracking fish requirements and cast times. /lll to open main window.",
+  "ApplicableVersion": "any",
+  "Tags": [
+    "fishing"
+  ]
+}

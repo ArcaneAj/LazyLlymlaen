@@ -3,7 +3,7 @@ using System.Numerics;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
 
-namespace SamplePlugin.Windows;
+namespace LazyLlymlaen.Windows;
 
 public class ConfigWindow : Window, IDisposable
 {
